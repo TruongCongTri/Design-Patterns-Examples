@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app;
+
+import buttons.Button;
+import checkboxes.Checkbox;
+import factories.GUIFactory;
+
+/**
+ * Factory users don't care which concrete factory they use since they work with
+ * factories and products through abstract interfaces.
+ */
+public class Application {
+    private Button button;
+    private Checkbox checkbox;
+
+    public Application(GUIFactory factory) {
+        button = factory.createButton();
+        checkbox = factory.createCheckbox();
+    }
+
+    public void paint() {
+        button.paint();
+        checkbox.paint();
+    }
+}
